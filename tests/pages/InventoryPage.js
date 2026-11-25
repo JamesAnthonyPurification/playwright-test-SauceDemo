@@ -13,6 +13,14 @@ class InventoryPage {
     await productCard.getByRole('button', { name: 'Add to cart' }).click();
   }
 
+  async openProductDetails(productName) {
+    const productCard = this.productCards.filter({
+      has: this.page.getByText(productName, { exact: true }),
+    });
+
+    await productCard.locator('a[id$="_title_link"]').click();
+  }
+
   async openCart() {
     await this.shoppingCartLink.click();
   }

@@ -12,8 +12,10 @@ playwright-test-SauceDemo/
 │   ├── pages/
 │   │   ├── CartPage.js
 │   │   ├── InventoryPage.js
+│   │   ├── InventoryItemPage.js
 │   │   └── LoginPage.js
 │   ├── cart.spec.js
+│   ├── inventoryItem.spec.ts
 │   └── login.spec.js
 ├── .gitignore
 ├── package.json
@@ -34,6 +36,10 @@ npx playwright install chromium
 ```powershell
 npm test
 ```
+
+The inventory-item spec is named `inventoryItem.spec.ts` as requested, but its
+test code uses JavaScript/CommonJS syntax and the existing JavaScript page
+objects; it does not add TypeScript types.
 
 Run tests with the browser visible:
 
