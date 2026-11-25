@@ -50,6 +50,17 @@ npm run report
 Playwright saves screenshots and traces for failed tests in `test-results/`.
 Generated reports and test output are ignored by Git.
 
+## Render report site
+
+`render.yaml` describes a Render Static Site that builds and hosts the Playwright
+HTML report. It installs Chromium, runs the test suite, and publishes
+`playwright-report/` when the build succeeds. This deploys the test report, not
+the SauceDemo application.
+
+To create the site, sign in to [Render](https://dashboard.render.com/), choose
+**New > Blueprint**, connect this GitHub repository, and apply the Blueprint.
+Render will build again when changes are pushed to `main`.
+
 ## Page Object Model
 
 Each class in `tests/pages/` receives a Playwright `page` in its constructor.

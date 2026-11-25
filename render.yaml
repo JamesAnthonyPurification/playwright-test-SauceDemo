@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: saucedemo-playwright-report
+    runtime: static
+    branch: main
+    buildCommand: npm ci && npx playwright install --with-deps chromium && npm test
+    staticPublishPath: ./playwright-report
